@@ -1,11 +1,12 @@
 # server/src/main.py
 
-from flask import Flask, request, jsonify
+import os
 import logging
+from flask import Flask, request, jsonify
 from config_management import ConfigManagement
 from compliance_management import ComplianceManagement
 from fim_logs import LoggingModule
-from shared import constants
+from ..shared.constants import constants
 
 app = Flask(__name__)
 
