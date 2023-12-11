@@ -1,12 +1,16 @@
 # server/src/main.py
 
 import os
+import sys
 import logging
+
 from flask import Flask, request, jsonify
 from config_management import ConfigManagement
 from compliance_management import ComplianceManagement
 from fim_logs import LoggingModule
-from ..shared.constants import constants
+from shared.constants import SERVER_PORT
+
+
 
 app = Flask(__name__)
 
@@ -53,4 +57,4 @@ if __name__ == "__main__":
     print(f"File path: {path}")
     
     ssl_context = (os.path.join('certs', 'cert.pem'), os.path.join('certs', 'key.pem'))
-    app.run(debug=True, host='0.0.0.0', port=constants.SERVER_PORT, ssl_context=ssl_context)
+    app.run(debug=True, host='0.0.0.0', port=SERVER_PORT, ssl_context=ssl_context)

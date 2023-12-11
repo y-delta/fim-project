@@ -3,3 +3,4 @@ certs/
 .vscode/
 test_directory/a
 test_directory/b
+server/src/__pycache__/config_management.cpython-311.pyc
