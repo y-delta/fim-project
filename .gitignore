@@ -1,2 +1,3 @@
+# Removed sensitive files and directoroies
 certs/
 .vscode/
