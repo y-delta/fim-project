@@ -1,4 +1,6 @@
+import sys
 import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 import time
 from file_monitor import FileMonitor
 from communication import Communication
@@ -13,7 +15,7 @@ def main():
         if changes:
             communication.send_data(changes)
 
-        time.sleep(constants.MONITOR_INTERVAL)
+        time.sleep(MONITOR_INTERVAL)
 
 if __name__ == "__main__":
     # Constructing a file path based on the operating system

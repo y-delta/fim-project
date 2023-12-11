@@ -6,7 +6,7 @@ import logging
 from datetime import datetime
 from shared.constants import HASH_ALGORITHM, FILE_STATE, TRUSTED_PATHS, LOG_FILE
 
-logger - logging.getLogger(__name__)
+logger = logging.getLogger(__name__)
 
 class ComplianceManagement:
     def __init__(self):
@@ -21,6 +21,10 @@ class ComplianceManagement:
             self.check_file_integrity(file_path)
 
     def check_file_integrity(self, file_path):
+        if file_path not in FILE_STATE:
+            logging.warning(f"File path {file_path} not found in FILE_STATE.")
+        return
+        
         if HASH_ALGORITHM not in self.allowed_hash_algorithms:
             logger.error(f"Error: Unsupported hash algorithm '{HASH_ALGORITHM}'.")
             return

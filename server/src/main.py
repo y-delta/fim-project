@@ -1,7 +1,9 @@
 # server/src/main.py
 
-import os
 import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+
 import logging
 
 from flask import Flask, request, jsonify
@@ -10,19 +12,19 @@ from compliance_management import ComplianceManagement
 from fim_logs import LoggingModule
 from shared.constants import SERVER_PORT
 
-
+import traceback
 
 app = Flask(__name__)
 
 config_management = ConfigManagement()
 compliance_management = ComplianceManagement()
-logging = LoggingModule()
+log_module = LoggingModule()
 
-logging.basicConfig(
-    level=logging.INFO,  # Set the desired logging level
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    filename='fim.log'  # Specify the log file
-)
+# log_module.basicConfig(
+#     level=log_module.INFO,  # Set the desired logging level
+#     format='%(asctime)s - %(levelname)s - %(message)s',
+#     filename='fim.log'  # Specify the log file
+# )
 
 @app.route('/recieve_data', methods=['POST'])
 def recieve_data():
@@ -38,10 +40,12 @@ def process_data(data):
         try:
             config_management.process_change(change)
             compliance_management.check_compliance(change)
-            logging.log_alert(change)
-            logging.log_change(change)
+            log_module.log_alert(change)
+            log_module.log_change(change)
         except Exception as e:
+            log_module.log_server(e)
             logging.error(f"Error processing change: {e}")
+
 
 if __name__ == "__main__":
     # Constructing a file path based on the operating system
