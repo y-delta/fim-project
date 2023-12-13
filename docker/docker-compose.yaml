@@ -5,18 +5,24 @@ services:
     build:
       context: ../
       dockerfile: docker/agent/Dockerfile
+    container_name: FIM-agent
+    image: fim-agent
+    restart: on-failure
     # volumes:
     #   - ./agent/src:/usr/src/app
     #   - ./shared:/usr/src/app/shared
-    container_name: FIM-agent
+
 
   server:
     build:
       context: ../
       dockerfile: docker/server/Dockerfile
+    container_name: FIM-server
+    image: fim-server
+    restart: always
     # volumes:
     #   - ./server/src:/usr/src/app
     #   - ./shared:/usr/src/app/shared
     ports:
       - "5000:5000"
-    container_name: FIM-server
+    
