@@ -19,3 +19,9 @@ alert_logs.log
 audit_logs.log
 shared/fim.log
 docker/requirements.txt
+tests/__pycache__/test_agent.cpython-311.pyc
+tests/__pycache__/test_server.cpython-311.pyc
+agent/src/__pycache__/__init__.cpython-311.pyc
+agent/src/__pycache__/communication.cpython-311.pyc
+agent/src/__pycache__/main.cpython-311.pyc
+server/src/__pycache__/__init__.cpython-311.pyc
