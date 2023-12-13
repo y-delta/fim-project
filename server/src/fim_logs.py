@@ -15,7 +15,7 @@ class LoggingModule:
         # Create and add handlers to each logger with appropriate file paths
         alert_log_handler = logging.FileHandler(constants.ALERT_LOG_PATH)
         audit_log_handler = logging.FileHandler(constants.AUDIT_LOG_PATH)
-        fim_log_handler = logging.FileHandler('/home/kali/Projects/fim-project/shared/logs/fim.log')
+        fim_log_handler = logging.FileHandler(constants.LOG_FILE)
 
         # Common format for both loggers
         formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')

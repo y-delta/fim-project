@@ -4,7 +4,7 @@ certs/
 test_directory/a
 test_directory/b
 server/src/__pycache__/config_management.cpython-311.pyc
-agent/src/__pycache__/communication.cpython-311.pyc
+agent/src/__pycache__/communication.cpython-311.pyct 
 agent/src/__pycache__/file_monitor.cpython-311.pyc
 server/src/__pycache__/compliance_management.cpython-311.pyc
 server/src/__pycache__/fim_logs.cpython-311.pyc
@@ -18,3 +18,4 @@ shared/logs/fim.log
 alert_logs.log
 audit_logs.log
 shared/fim.log
+docker/requirements.txt
