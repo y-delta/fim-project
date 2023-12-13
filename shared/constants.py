@@ -1,14 +1,14 @@
 import os
 import json
 
-MONITORED_PATHS = ['/home/kali/Projects/fim-project/test_directory'] # change
+MONITORED_PATHS = ['./test_directory/'] # change /path/to/monitor/
 FILE_STATE = {}
 MONITOR_INTERVAL = 10 #seconds
 SERVER_URL = 'https://localhost:5000/recieve_data'
 SERVER_PORT = 5000
 CONFIG_FILE_PATH = './config.json' # change
 HASH_ALGORITHM = 'sha3-256'
-TRUSTED_PATHS = ['/path/to/trusted/files']
+TRUSTED_PATHS = ['/path/to/trusted/files'] # change
 LOG_FILE = './shared/logs/fim.log'
 AUDIT_LOG_PATH = './shared/logs/audit.log'
 ALERT_LOG_PATH = './shared/logs/alert.log'
