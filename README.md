@@ -23,6 +23,7 @@ This repository contains a Python-based project for monitoring file changes and 
 The `docker-compose.yml` sets up the Agent and Server. It includes configurations for building Docker images, container naming, restart policies, and port mappings for the Server.
 
 To build using docker-compose, run the following command:
+
 `docker-compose up --build`
 
 
@@ -37,14 +38,15 @@ Agent and Server configurations are adjustable in their respective config files.
 The `tests` directory contains test scripts ensuring code functionality and reliability. Run the following commands from the root of the project directory to test application logic:
 
 `python3 -m unittest tests.test_agent`
+
 `python3 -m unittest tests.test_server`
 
 ## Log Files
 The application generates log files for both the Agent and the Server. These logs contain information about file changes, alerts, and errors. Log files are stored in `shared/logs`, providing valuable information for monitoring and debugging.
 
-1. alert.log - Creation, deletion and other alerts.
-2. audit.log -Records file modifications and accesses.
-3. fim.log - General application logs, includes errors, warnings and flask server logs. 
+1. `alert.log` - Creation, deletion and other alerts.
+2. `audit.log` -Records file modifications and accesses.
+3. `fim.log` - General application logs, includes errors, warnings and flask server logs. 
 
 ## Contributing
 Contributions are welcome! Please get in touch with me on how to contribute to the project.
