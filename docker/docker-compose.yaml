@@ -1,13 +1,28 @@
 version: '3'
 
 services:
-  file_agent:
-    built:
-      context: ../agent
-      volumes:
+  agent:
+    build:
+      context: ../
+      dockerfile: docker/agent/Dockerfile
+    container_name: FIM-agent
+    image: fim-agent
+    restart: on-failure
+    # volumes:
+    #   - ./agent/src:/usr/src/app
+    #   - ./shared:/usr/src/app/shared
+
 
   server:
     build:
-      context: ../server
+      context: ../
+      dockerfile: docker/server/Dockerfile
+    container_name: FIM-server
+    image: fim-server
+    restart: always
+    # volumes:
+    #   - ./server/src:/usr/src/app
+    #   - ./shared:/usr/src/app/shared
     ports:
       - "5000:5000"
+    

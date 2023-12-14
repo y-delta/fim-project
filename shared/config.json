@@ -1,0 +1,10 @@
+{
+    "monitored_paths": ["/path/to/monitor"],
+    "file_state": {},
+    "monitor_interval": 60,
+    "server_url": "https://localhost:5000/receive_data",
+    "server_port": 5000,
+    "config_file_path": "shared/config.json",
+    "hash_algorithm": "sha3-256"
+  }
+  

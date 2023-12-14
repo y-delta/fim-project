@@ -6,9 +6,10 @@ WORKDIR /usr/src/app
 RUN useradd -m docker-user
 USER docker-user
 
-COPY ./agent/src/* /usr/src/app/
+COPY ./server/src/* /usr/src/app/
 COPY ./shared/ /usr/src/app/shared
 COPY requirements.txt /usr/src/app/
+COPY ./certs/ /usr/src/app/certs
 
 RUN pip install --no-cache-dir -r requirements.txt
 
