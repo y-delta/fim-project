@@ -46,6 +46,7 @@ def process_data(data):
             log_module.log_server(e)
             logging.error(f"Error processing change: {e}")
 
+
 def get_ssl_context():
     return (os.path.join('certs', 'cert.pem'), os.path.join('certs', 'key.pem'))
 
@@ -63,4 +64,5 @@ if __name__ == "__main__":
     print(f"File path: {path}")
     
     ssl_context = get_ssl_context()
+
     app.run(debug=True, host='0.0.0.0', port=SERVER_PORT, ssl_context=ssl_context)
