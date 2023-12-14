@@ -11,10 +11,12 @@ def main():
     communication = Communication()
 
     while True:
-        changes = file_monitor.monitor_files()
-        if changes:
-            communication.send_data(changes)
-
+        try:
+            changes = file_monitor.monitor_files()
+            if changes:
+                communication.send_data(changes)
+        except Exception as e:
+            print(f"Error in monitoring or communication: {e}")
         time.sleep(MONITOR_INTERVAL)
 
 if __name__ == "__main__":
